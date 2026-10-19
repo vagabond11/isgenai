@@ -1,0 +1,204 @@
+:root {
+  color-scheme: light;
+  font-family: Arial, sans-serif;
+  background: #053f39;
+  color: #ffffff;
+}
+
+body {
+  margin: 0;
+}
+
+main {
+  padding: 18px;
+}
+
+header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 18px;
+}
+
+header strong {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 0.9rem;
+}
+
+header span {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+label {
+  display: block;
+  margin-bottom: 6px;
+  color: rgba(255, 255, 255, 0.7);
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 0.72rem;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+input,
+button {
+  width: 100%;
+  min-height: 42px;
+  box-sizing: border-box;
+  border-radius: 0;
+  font: inherit;
+}
+
+input {
+  border: 1px solid rgba(255, 255, 255, 0.32);
+  background: rgba(0, 0, 0, 0.18);
+  color: #ffffff;
+  padding: 0 10px;
+}
+
+button {
+  margin-top: 12px;
+  border: 1px solid #24e0a3;
+  background: #24e0a3;
+  color: #032a26;
+  cursor: pointer;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 0.78rem;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.feedControls {
+  display: grid;
+  gap: 10px;
+  margin-top: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.26);
+  padding: 12px;
+}
+
+.toggleRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin: 0;
+}
+
+.toggleRow input {
+  width: 18px;
+  min-height: 18px;
+  accent-color: #24e0a3;
+}
+
+.toggleRow span {
+  color: #ffffff;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 0.76rem;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.modeGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 6px;
+}
+
+.modeGrid label {
+  display: grid;
+  min-height: 38px;
+  place-items: center;
+  margin: 0;
+  border: 1px solid rgba(255, 255, 255, 0.26);
+  color: #ffffff;
+  cursor: pointer;
+}
+
+.modeGrid input {
+  position: absolute;
+  width: 1px;
+  min-height: 1px;
+  opacity: 0;
+}
+
+.modeGrid label:has(input:checked) {
+  border-color: #24e0a3;
+  background: rgba(36, 224, 163, 0.16);
+}
+
+#applyFeedFilter {
+  margin-top: 0;
+}
+
+#feedStats {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.82rem;
+}
+
+#result {
+  margin-top: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.26);
+  background: #ffffff;
+  padding: 14px;
+  color: #053f39;
+}
+
+#result:empty {
+  display: none;
+}
+
+.badge {
+  display: inline-block;
+  margin-bottom: 10px;
+  color: #032a26;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 0.74rem;
+  font-weight: 800;
+}
+
+p {
+  margin: 0 0 10px;
+  line-height: 1.45;
+}
+
+a {
+  color: #053f39;
+  font-weight: 800;
+}
+
+.hint,
+.note {
+  color: rgba(255, 255, 255, 0.78);
+  font-size: 0.86rem;
+}
+
+.note {
+  font-size: 0.76rem;
+}
+
+main > .toggleRow {
+  margin-top: 12px;
+}
+
+#result ul {
+  margin: 0 0 10px;
+  padding-left: 18px;
+  line-height: 1.4;
+}
+
+#result .basis,
+#result .caveat {
+  color: #3d5c58;
+  font-size: 0.82rem;
+}
+
+footer {
+  margin-top: 16px;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.78rem;
+}
+
+footer a {
+  color: #24e0a3;
+}

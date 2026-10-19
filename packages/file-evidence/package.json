@@ -1,0 +1,27 @@
+{
+  "name": "@isgenai/file-evidence",
+  "version": "0.1.0",
+  "description": "Read saved AI image generation records (AUTOMATIC1111, ComfyUI, InvokeAI, NovelAI) from PNG text chunks, with CRC checks. No network, no dependencies.",
+  "license": "MIT",
+  "author": "isGenAI (https://isgenai.com)",
+  "homepage": "https://isgenai.com",
+  "repository": { "type": "git", "url": "git+https://github.com/vagabond11/isgenai.git", "directory": "packages/file-evidence" },
+  "keywords": ["png", "metadata", "stable-diffusion", "comfyui", "automatic1111", "invokeai", "novelai", "ai-detection", "image-metadata"],
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": { ".": { "types": "./dist/index.d.ts", "default": "./dist/index.js" } },
+  "files": ["dist", "README.md", "LICENSE"],
+  "engines": { "node": ">=18" },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit && tsc -p tsconfig.test.json",
+    "test": "tsx --test test/*.test.ts",
+    "prepublishOnly": "npm run build && npm test"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.0",
+    "tsx": "^4.19.0",
+    "typescript": "^5.6.0"
+  }
+}

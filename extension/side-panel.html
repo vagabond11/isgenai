@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>isGenAI</title>
+    <link rel="stylesheet" href="side-panel.css">
+  </head>
+  <body>
+    <main>
+      <header>
+        <strong>isGenAI</strong>
+        <span>Is it AI? See the evidence.</span>
+      </header>
+      <p class="hint">Right-click any image and choose <b>Check image with isGenAI</b>, or check the page you are on.</p>
+      <button id="checkButton" type="button">Check this page</button>
+      <label class="toggleRow" for="publicReport">
+        <span>Create a public report link</span>
+        <input id="publicReport" type="checkbox">
+      </label>
+      <p class="note">Off by default: checks are private and create no public report.</p>
+      <section id="result" aria-live="polite"></section>
+      <section class="feedControls" aria-label="Feed filter">
+        <label class="toggleRow">
+          <span>AI-label feed filter</span>
+          <input id="feedFilterEnabled" type="checkbox" checked>
+        </label>
+        <div class="modeGrid" role="radiogroup" aria-label="Filter mode">
+          <label>
+            <input type="radio" name="feedMode" value="dim" checked>
+            <span>Dim</span>
+          </label>
+          <label>
+            <input type="radio" name="feedMode" value="hide">
+            <span>Hide</span>
+          </label>
+          <label>
+            <input type="radio" name="feedMode" value="label">
+            <span>Label</span>
+          </label>
+        </div>
+        <button id="applyFeedFilter" type="button">Apply to feed</button>
+        <p id="feedStats" aria-live="polite"></p>
+      </section>
+      <footer><a id="siteLink" target="_blank" rel="noopener">isgenai.com</a> · <a id="privacyLink" target="_blank" rel="noopener">Privacy</a></footer>
+    </main>
+    <script src="config.js"></script>
+    <script src="side-panel.js"></script>
+  </body>
+</html>

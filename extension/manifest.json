@@ -1,0 +1,53 @@
+{
+  "manifest_version": 3,
+  "name": "isGenAI — AI Image & Content Credentials Checker",
+  "short_name": "isGenAI",
+  "version": "1.0.1",
+  "description": "Right-click any image to read its Content Credentials (C2PA), AI labels and saved prompts with isGenAI. Free, no account.",
+  "homepage_url": "https://isgenai.com/browser-extension",
+  "icons": {
+    "16": "icons/icon-16.png",
+    "32": "icons/icon-32.png",
+    "48": "icons/icon-48.png",
+    "128": "icons/icon-128.png"
+  },
+  "action": {
+    "default_title": "Open the isGenAI side panel",
+    "default_icon": {
+      "16": "icons/icon-16.png",
+      "32": "icons/icon-32.png"
+    }
+  },
+  "background": {
+    "service_worker": "service-worker.js"
+  },
+  "side_panel": {
+    "default_path": "side-panel.html"
+  },
+  "permissions": [
+    "activeTab",
+    "contextMenus",
+    "sidePanel",
+    "storage"
+  ],
+  "host_permissions": [
+    "https://isgenai.com/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "https://x.com/*",
+        "https://twitter.com/*",
+        "https://www.linkedin.com/*",
+        "https://www.instagram.com/*",
+        "https://www.facebook.com/*",
+        "https://www.tiktok.com/*",
+        "https://www.youtube.com/*",
+        "https://bsky.app/*",
+        "https://*.mastodon.social/*"
+      ],
+      "js": ["feed-filter.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}
